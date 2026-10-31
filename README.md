@@ -1,36 +1,205 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clinova — AI-Powered Healthcare Intelligence Dashboard
+
+<p align="center">
+
+**Transforming hospital data into actionable insights with AI.**
+
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Clinova-16A34A?style=for-the-badge)](https://clinova-frontend-j4t5.vercel.app)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+
+</p>
+
+## Overview
+
+**Clinova** is an AI-powered healthcare operations and clinical intelligence dashboard designed to simplify hospital data management and support data-driven decision-making.
+
+It brings multiple hospital datasets into one unified interface and integrates a Gemini-powered AI assistant to help users explore healthcare information through natural-language queries.
+
+The platform focuses on making healthcare data more accessible, understandable and actionable.
+
+## Live Demo
+
+🌐 **[Explore Clinova](https://clinova-frontend-j4t5.vercel.app)**
+
+## Key Features
+
+### 1. Healthcare Dashboard
+- Centralized view of hospital information.
+- Patient and appointment data.
+- Diagnostic activity monitoring.
+- Vitals data visualization.
+
+### 2. AI-Powered Assistant — Ask Clinova
+- Natural-language interaction with hospital information.
+- Context-aware responses using hospital dataset samples.
+- Concise answers to healthcare operations questions.
+- Gemini API integration.
+
+### 3. Multi-Dataset Integration
+
+Clinova currently works with five Excel datasets:
+
+| Dataset | Description |
+|---|---|
+| Patients | Patient records |
+| Appointments | Appointment information |
+| Diagnostic Logs | Diagnostic activity |
+| Vitals Stream | Patient vital readings |
+| Chat Sessions | Chat interaction records |
+
+### 4. Data APIs
+- Dedicated API endpoints for patient and hospital data.
+- Excel file processing using SheetJS.
+- JSON responses for frontend integration.
+
+## Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | Next.js, React, TypeScript |
+| Styling | Tailwind CSS |
+| Backend | Next.js API Routes |
+| AI Integration | Google Gemini API |
+| Data Processing | SheetJS (xlsx) |
+| Data Storage | Excel datasets |
+| Version Control | Git, GitHub |
+| Deployment | Vercel |
+
+## System Architecture
+
+```text
+             USER
+               |
+               v
+       CLINOVA DASHBOARD
+          Next.js / React
+               |
+       +-------+-------+
+       |               |
+       v               v
+  Hospital Data     Ask Clinova AI
+       API               |
+       |                 v
+       v              Gemini API
+  Excel Datasets          |
+       |                 v
+       +----------> AI Response
+                         |
+                         v
+                   User Interface
+```
+
+## Project Structure
+
+```text
+frontend/
+├── data/
+│   ├── patients.xlsx
+│   ├── appointments.xlsx
+│   ├── diagnostic_logs.xlsx
+│   ├── vitals_stream.xlsx
+│   └── chat_sessions.xlsx
+│
+├── public/
+├── src/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── chat/
+│   │   │   ├── hospital-data/
+│   │   │   └── patients/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   │
+│   ├── components/
+│   └── lib/
+│       └── loadData.ts
+│
+├── .env.local
+├── package.json
+└── next.config.ts
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js
+- npm
+- Google Gemini API key
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/dayanita362/clinova-frontend.git
+```
+
+Navigate to the project:
+
+```bash
+cd clinova-frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+### Environment Variables
+
+Create a `.env.local` file in the project root:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+```
+
+Never commit your API key to GitHub.
+
+### Run Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Future Enhancements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Advanced analytics across complete hospital datasets.
+- Real-time data monitoring and visualization.
+- Streaming AI responses.
+- Advanced patient and appointment analytics.
+- Improved conversational context and chat history.
+- Enhanced responsive dashboard experience.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Links
 
-## Deploy on Vercel
+- **Live Application:** https://clinova-frontend-j4t5.vercel.app
+- **GitHub Repository:** https://github.com/dayanita362/clinova-frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Disclaimer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Clinova is an educational and portfolio project demonstrating healthcare data visualization, API development and AI integration. It is not intended to replace professional medical judgment or clinical decision-making.
+
+---
+
+<p align="center">
+
+**Built with curiosity, technology and a vision for smarter healthcare.**
+
+</p>
